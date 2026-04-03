@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wichitall</title>
+  <meta name="description" content="Wichitall is a civic GIS and data journalism portal for all things urbanism in Wichita, Kansas." />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            mono: ['"IBM Plex Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'IBM Plex Mono', monospace; }
+
+    .link-arrow-magic {
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+    }
+    a:hover .link-arrow-magic {
+      transform: translate(3px, -3px);
+    }
+    .card-link:hover {
+      color: #1a73e8;
+    }
+    .card-link:hover svg line,
+    .card-link:hover svg polyline {
+      stroke: #1a73e8;
+    }
+    .card-link:hover .tag {
+      background: #1a73e8;
+    }
+
+    .card-img {
+      background: #e5e5e5;
+      height: 262px;
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+<body class="bg-white text-black">
+
+  <!-- Header row -->
+  <div class="max-w-[1175px] mx-auto px-4 pt-10 flex items-start gap-[40px]">
+
+    <!-- Wichitall title box -->
+    <div class="relative mt-[4px] flex-shrink-0" style="width:328px;">
+      <div class="absolute top-[-3px] left-0 h-[3px] w-[40px] bg-black"></div>
+      <div class="absolute top-[-3px] right-0 h-[3px] w-[40px] bg-black"></div>
+      <div class="p-3 px-4 text-2xl uppercase font-bold border border-b-0 border-black">
+        Wichitall
+      </div>
+      <div style="height:3px;display:flex;justify-content:space-between;">
+        <div style="width:20%;background:black;"></div>
+        <div style="width:40%;background:black;"></div>
+      </div>
+    </div>
+
+    <!-- Section header -->
+    <div class="relative mt-[4px] flex-1">
+      <div class="absolute top-[-3px] left-0 h-[3px] w-[40px] bg-black"></div>
+      <div class="absolute top-[-3px] right-0 h-[3px] w-[272px] bg-black"></div>
+      <div class="p-3 px-4 text-lg uppercase font-bold border border-r-0 border-black">
+        All things urbanism in Wichita, Kansas
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Content columns -->
+  <div class="max-w-[1175px] mx-auto px-4 py-10 md:grid md:grid-cols-[328px_minmax(0,1fr)] md:gap-[40px]">
+
+    <!-- Sidebar -->
+    <aside class="mb-10 md:mb-0">
+      <div class="md:sticky md:top-10">
+
+        <!-- Description box -->
+        <div class="p-6 border border-black text-sm space-y-4">
+          <p>
+            Wichitall is a civic GIS (geographic information systems) and data journalism portal for all things urbanism in Wichita, Kansas.
+          </p>
+          <p>
+            Created by Rami Toubia Stucky, this website allows users to explore crash data, zoning maps, tax parcels, and other maps pertaining to the built environment.
+          </p>
+        </div>
+
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <section class="text-sm">
+
+      <div class="relative">
+        <div class="absolute top-0 left-0 w-[1px] bg-black" style="height:100%;"></div>
+
+        <!-- Card: Yes No Maybe -->
+        <div class="border border-black p-6 flex flex-col items-center gap-[40px] mb-6 ml-0">
+          <div class="card-img" style="background-image: url('yesnomaybe.png');"></div>
+          <div class="w-full border-t border-black">
+            <a
+              href="https://yesnomaybe.wichitall.com"
+              class="card-link flex flex-row items-center gap-[10px] mt-[20px] justify-between"
+            >
+              <div class="flex flex-row flex-wrap gap-[10px] items-center">
+                <span class="tag text-xs text-white uppercase bg-black p-2 py-1 self-start">Yes, No, Maybe</span>
+              </div>
+              <svg class="link-arrow-magic" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="4" y1="16" x2="16" y2="4" stroke="black" stroke-width="2"/>
+                <polyline points="7,4 16,4 16,13" fill="none" stroke="black" stroke-width="2"/>
+              </svg>
+            </a>
+            <div class="text-xs mt-4">
+              "Yes, No, Maybe" merges the City of Wichita zoning map with the city's Unified Zoning Code list of permitted uses. Users can select various land uses, such as restaurants, duplexes, or car washes, and ask "can I build here?" The map then responds "yes, no, or maybe" depending on if a particular lot permits such usage by right, by condition, or not at all.
+            </div>
+          </div>
+        </div>
+
+        <!-- Card: Bike & Pedestrian Crashes -->
+        <div class="border border-black p-6 flex flex-col items-center gap-[40px] mb-6 ml-0">
+          <div class="card-img" style="background-image: url('bikeped.png');"></div>
+          <div class="w-full border-t border-black">
+            <a
+              href="https://bikeped.wichitall.com"
+              class="card-link flex flex-row items-center gap-[10px] mt-[20px] justify-between"
+            >
+              <div class="flex flex-row flex-wrap gap-[10px] items-center">
+                <span class="tag text-xs text-white uppercase bg-black p-2 py-1 self-start">Bicycle and Pedestrian Crash Data</span>
+              </div>
+              <svg class="link-arrow-magic" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="4" y1="16" x2="16" y2="4" stroke="black" stroke-width="2"/>
+                <polyline points="7,4 16,4 16,13" fill="none" stroke="black" stroke-width="2"/>
+              </svg>
+            </a>
+            <div class="text-xs mt-4">
+              This scrapes data from the City of Wichita's GIS portal and visualizes bicycle and pedestrian crashes during 2026. It also includes information provided in KORAd (Kansas Open Records Act) police reports in order to provide specific characteristics of each crash. Examples include crash severity, location circumstances, driver and pedestrian/cyclist distance travelled from home before the crash, and median age.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>
